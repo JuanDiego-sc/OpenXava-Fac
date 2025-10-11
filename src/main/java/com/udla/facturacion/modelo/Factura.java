@@ -1,6 +1,8 @@
 package com.udla.facturacion.modelo;
 
 import java.time.*;
+import java.util.Collection;
+
 import javax.persistence.*;
 import org.hibernate.annotations.GenericGenerator;
 import org.openxava.annotations.*;
@@ -39,5 +41,12 @@ public class Factura {
     properties=@PropertyValue(name="anyo") 
 )   
     int numero;
+
+    @ManyToOne(fetch=FetchType.LAZY, optional=false)
+    Cliente cliente;
+
+    @ElementCollection
+    @ListProperties("producto.number, producto.description, cantidad, producto.price")
+    Collection<Detalle> detalles;
  
 }
