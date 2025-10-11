@@ -15,4 +15,7 @@ public class Cliente {
     @Required
     @Column(length = 50)
     String name;
+
+    @Embedded
+    Direccion address;
 }
