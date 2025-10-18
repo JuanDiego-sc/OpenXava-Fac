@@ -4,6 +4,10 @@ import javax.persistence.*;
 import org.openxava.annotations.*;
 import lombok.*;
 
+
+@View(name="Simple", 
+    members="number, name" 
+)
 @Entity
 @Getter @Setter
 public class Cliente {

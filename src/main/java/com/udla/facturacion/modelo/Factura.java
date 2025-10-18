@@ -12,6 +12,13 @@ import com.udla.facturacion.calculators.CalculadorSiguienteNumeroParaAnyo;
 
 import lombok.*;
 
+@View(members= 
+ "anio, number, date;" + 
+ "cliente;" + 
+ "detalles;" +
+ "comments"
+)
+
 @Entity @Getter @Setter
 public class Factura {
 
@@ -43,6 +50,7 @@ public class Factura {
     int numero;
 
     @ManyToOne(fetch=FetchType.LAZY, optional=false)
+    @ReferenceView("Simple")
     Cliente cliente;
 
     @ElementCollection
