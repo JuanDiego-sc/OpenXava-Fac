@@ -19,7 +19,7 @@ public class Autor {
     String nombre;
 
     @OneToMany(mappedBy="autor")
-    @ListProperties("numero, descripcion, precio")
+    @ListProperties("number, description, price")
     Collection<Producto> productos;
   
 }
